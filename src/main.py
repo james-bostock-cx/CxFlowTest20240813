@@ -1,4 +1,5 @@
 # An intentionally vulnerable Python program
+
 import logging
 from flask import Flask, request
 
