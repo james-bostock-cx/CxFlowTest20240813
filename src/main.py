@@ -1,6 +1,15 @@
-import os
-import sys
+import logging
+from flask import Flask, request
 
-if __name__ == '__main__':
-    for arg in sys.argv[1:]:
-        os.remove(arg)
+app = Flask(__name__)
+
+@app.route('/login', methods=['POST'])
+def login():
+    user = request.form.get('username')
+    pwd = request.form.get('pwd')
+    if doLogin(user, pwd):
+        logging.info('%s logged in successfully with password: %s' % (user, pwd))
+        return render_template('index.html', user)
+    else:
+        logging.info('%s failed to log in with password: %s' % (user, pwd))
+        return 'Failed to log in'
