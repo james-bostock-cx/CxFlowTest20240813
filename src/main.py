@@ -1,6 +1,6 @@
 # An intentionally vulnerable Python program.
 #
-#
+# Let's try and game the system.
 
 import logging
 from flask import Flask, request
