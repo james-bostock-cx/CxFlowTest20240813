@@ -1,5 +1,6 @@
-# A random comment
-# Another new PR
-# password: topsecret
+import os
+import sys
+
 if __name__ == '__main__':
-    print 'Hellow, World!'
+    for arg in sys.argv[1:]:
+        os.remove(arg)
